@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Lab · AlgoTale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AlgoTale</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="prompts.html">Prompt Lab</a>
+      <a href="binary-search.html">Binary Search</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Prompt Lab</h2>
+      <p>Type a problem and fill in the structure fields. The page builds two prompts so you can compare them.</p>
+
+      <label>Problem</label>
+      <textarea id="problem">Write a binary search function in Python for a sorted list.</textarea>
+
+      <label>Role</label>
+      <input id="role" value="You are a DSA tutor for second-year students.">
+
+      <label>Constraints</label>
+      <textarea id="constraints">Use a while loop. Do not use bisect. Handle an empty list.</textarea>
+
+      <label>Output format</label>
+      <input id="format" value="A code block, then 3 lines on time complexity.">
+
+      <button onclick="buildPrompts()">Build prompts</button>
+    </div>
+
+    <div class="card">
+      <h3>Basic prompt</h3>
+      <pre id="basicOut"></pre>
+    </div>
+
+    <div class="card">
+      <h3>Structured prompt</h3>
+      <pre id="structuredOut"></pre>
+    </div>
+
+    <div class="card">
+      <p>
+        Copy each prompt into a chatbot and compare the replies. Then test the code
+        on the <a href="binary-search.html">Binary Search</a> page.
+      </p>
+    </div>
+  </main>
+
+  <footer>AlgoTale · Prompt Engineering project</footer>
+
+  <script>
+    function basicPrompt(problem) {
+      return "Solve this: " + problem;
+    }
+
+    function structuredPrompt(problem, role, constraints, outputFormat) {
+      return "Role: " + role + "\n" +
+             "Task: " + problem + "\n" +
+             "Constraints: " + constraints + "\n" +
+             "Output format: " + outputFormat;
+    }
+
+    function buildPrompts() {
+      const problem = document.getElementById("problem").value;
+      const role = document.getElementById("role").value;
+      const constraints = document.getElementById("constraints").value;
+      const format = document.getElementById("format").value;
+
+      document.getElementById("basicOut").textContent = basicPrompt(problem);
+      document.getElementById("structuredOut").textContent =
+        structuredPrompt(problem, role, constraints, format);
+    }
+
+    buildPrompts();
+  </script>
+</body>
+</html>
