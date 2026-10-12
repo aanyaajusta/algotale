@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · AlgoTale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AlgoTale</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="prompts.html">Prompt Lab</a>
+      <a href="binary-search.html">Binary Search</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>About this project</h2>
+      <p>
+        This project was made for the prompt engineering course. The main topic is
+        prompt engineering. The second topic is data structures and algorithms, and
+        we chose binary search.
+      </p>
+      <p>
+        The site is static, which means plain HTML, CSS, and JavaScript with no
+        server. It is hosted for free on GitHub Pages.
+      </p>
+      <h3>What we did</h3>
+      <ul>
+        <li>Wrote a basic prompt and a structured prompt for the same problem.</li>
+        <li>Compared the AI replies to each prompt.</li>
+        <li>Tested the returned code with five test cases.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Prompt engineering patterns</h2>
+      <p>
+        A prompt pattern is a reusable way of structuring a request to a language model.
+        Patterns are not rules that always work. They are starting points you can adapt
+        and test. The five patterns below are the ones we studied and used in the Prompt Lab.
+      </p>
+
+      <h3>1. Persona pattern</h3>
+      <p>
+        The persona pattern asks the model to act as a specific role, such as a teacher,
+        an interviewer, or a code reviewer. The role shapes the knowledge the model draws on
+        and the tone it uses.
+      </p>
+      <p>
+        <strong>Example:</strong> "You are a DSA tutor for second-year students."
+        <br><strong>In our project:</strong> the Role field in the Prompt Lab.
+      </p>
+
+      <h3>2. Audience persona pattern</h3>
+      <p>
+        This pattern tells the model who the answer is for. The same question needs a
+        different explanation for a beginner than for an experienced developer. Describing
+        the reader's background helps the model choose the right depth and vocabulary.
+      </p>
+      <p>
+        <strong>Example:</strong> "Explain binary search to someone who knows loops but
+        has not studied sorting algorithms."
+        <br><strong>In our project:</strong> we used a second-year student as the audience
+        when checking whether the explanation was clear enough.
+      </p>
+
+      <h3>3. Question refinement pattern</h3>
+      <p>
+        With this pattern, you ask the model to improve your question before it answers.
+        Vague questions get vague answers. Asking the model to point out missing details
+        or suggest a sharper version often produces a better final prompt.
+      </p>
+      <p>
+        <strong>Example:</strong> "Before answering, suggest a more specific version of my
+        question and list what information you would need."
+        <br><strong>In our project:</strong> this is how we turned "solve this" into a
+        prompt that names the language, the input type, and the edge cases.
+      </p>
+
+      <h3>4. Cognitive verifier pattern</h3>
+      <p>
+        The cognitive verifier pattern asks the model to break a problem into smaller
+        questions, answer them, and then check its own work. It reduces the chance of a
+        confident but wrong answer, because the model has to show its reasoning steps.
+      </p>
+      <p>
+        <strong>Example:</strong> "Break this problem into sub-questions, answer each one,
+        then check whether your code handles an empty list."
+        <br><strong>In our project:</strong> the empty-list test case checks whether the
+        verification step actually caught an edge case.
+      </p>
+
+      <h3>5. Flipped interaction pattern</h3>
+      <p>
+        In the flipped interaction pattern, the model asks you questions instead of
+        answering right away. You give information one piece at a time until the model
+        has enough to help. This is useful when you do not yet know what details matter.
+      </p>
+      <p>
+        <strong>Example:</strong> "Ask me one question at a time until you know my
+        language, my skill level, and the input size. Then write the solution."
+        <br><strong>In our project:</strong> we used this to see whether the model
+        would ask about constraints we had not thought to mention.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Limitations</h2>
+      <p>
+        We used one chatbot and five test cases. The comparison is small, so the
+        results should be read as a demonstration, not as proof. Some patterns may
+        work better for other problems or other models.
+      </p>
+    </div>
+  </main>
+
+  <footer>AlgoTale · Prompt Engineering project</footer>
+</body>
+</html>
